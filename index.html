@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Images/Logo.png">
+    <title>Girlie Grace Portfolio</title>
+
+    <style>
+        :root {
+            --bg: #f5eee8;
+            --card: #ffffff;
+            --accent: #f3e6a4;
+            --text: #2f2f2f;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        
+        header {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 26px;
+            font-weight: 500;
+        }
+
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: var(--text);
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            z-index: 999;
+        }
+
+        .modal.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: #ffffff;
+            width: 90%;
+            max-width: 420px;
+            padding: 35px;
+            border-radius: 14px;
+            text-align: left;
+            transform: scale(0.9);
+            transition: transform 0.4s ease;
+            position: relative;
+        }
+
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+
+        .modal h2 {
+            margin-top: 0;
+            font-weight: 400;
+        }
+
+        .modal p {
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 18px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px 120px;
+        }
+
+        
+        .hero {
+            position: relative;
+            background: var(--card);
+            border-radius: 20px;
+            padding: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero img {
+            width: 100%;
+            border-radius: 14px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+
+        .highlight {
+            background: var(--accent);
+            padding: 6px 14px;
+            display: inline-block;
+        }
+
+        .hero p {
+            margin-top: 20px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        
+        .story {
+            margin-top: 120px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .story h3 {
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .story p {
+            line-height: 1.9;
+            font-size: 15px;
+        }
+
+        .story img {
+            width: 100%;
+            border-radius: 14px;
+        }
+
+        
+        .facts {
+            margin-top: 140px;
+            text-align: center;
+        }
+
+        .facts h3 {
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 60px;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .fact {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 14px;
+            font-size: 15px;
+            line-height: 1.7;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        /*Profile 1&2 animation + facts*/
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.9s ease, transform 0.9s ease;
+        }
+
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 900px) {
+            .hero,
+            .story {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 40px 25px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Girlie Grace</h1>
+        <nav>
+            <a href="Portfolio.html">Home</a>
+            <a href="#">Skills</a>
+            <a href="#" data-modal="aboutModal">About</a>
+            <a href="#" data-modal="contactModal">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <img src="Images/Profile1.png" alt="Profile" class="fade-up">
+
+            <div>
+                <h2>
+                    hi, i'm <span class="highlight">Girlie Grace</span><br>
+                    and this is my portfolio.
+                </h2>
+                <p>
+                    I am a driven and detail-oriented aspiring web developer with a strong interest
+                    in building clean, functional, and user-friendly digital experiences. I enjoy
+                    transforming ideas into well-structured websites using modern technologies.
+                </p>
+            </div>
+        </section>
+    
+        <section class="story">
+            <div>
+                <h3><span class="highlight">how i started</span></h3>
+                <p>
+                    “Design with intention. Build with purpose. Learn without limits.”
+                    <br><br>
+                    I believe meaningful digital experiences are built through patience,
+                    curiosity, and continuous learning. Every project I create is an
+                    opportunity to grow and refine my skills.
+                </p>
+            </div>
+
+            <img src="Images/Profile2.png" alt="Story Image" class="fade-up">
+        </section>
+
+   
+        <section class="facts">
+            <h3>some <span class="highlight">fun facts</span>.</h3>
+
+            <div class="facts-grid fade-up">
+                <div class="fact">I enjoy refining layouts until every detail feels right</div>
+                <div class="fact">I love solving design and logic problems</div>
+                <div class="fact">I prefer clean, minimal, and organized interfaces</div>
+                <div class="fact">I constantly learn through experimentation</div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+    <!--about modal-->
+    <div class="modal" id="aboutModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>About Me</h2>
+            <p>
+                Hello, am I Girlie Grace, an aspiring web developer passionate about creating <br>
+                beautiful and functional websites. I am dedicated to continuous learning and    <br>
+                growth in the field of web development. <br><br>
+                BSIT 3-1 (irregular student)
+            </p>
+        </div>
+    </div>
+
+    <!--contact modal-->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contact</h2>
+            <p>Email: <strong>GirlieIDK@gmail.com</strong></p>
+            <p>Number: <strong>0912345678910</strong></p>
+            <p>Feel free to reach out for collaboration or inquiries.</p>
+        </div>
+    </div>
+
+    <!--Fade Up Animation Script-->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        document.querySelectorAll(".fade-up").forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+    <!--Modal Contact & About-->
+    <script>
+        document.querySelectorAll("[data-modal]").forEach(link => {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+                const modalId = link.getAttribute("data-modal");
+                document.getElementById(modalId).classList.add("show");
+            });
+        });
+
+        document.querySelectorAll(".close").forEach(btn => {
+            btn.addEventListener("click", () => {
+                btn.closest(".modal").classList.remove("show");
+            });
+        });
+
+        document.querySelectorAll(".modal").forEach(modal => {
+            modal.addEventListener("click", e => {
+                if (e.target === modal) {
+                    modal.classList.remove("show");
+                }
+            });
+        });
+    </script>
+</html>
