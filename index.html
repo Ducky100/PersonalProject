@@ -19,6 +19,11 @@
             --highlight: #2f2f2f;
             --highlight-bg: rgba(243, 230, 164, 0.3);
 
+            /* Modal */
+            --modal-bg: #ffffff;
+            --modal-text: #2f2f2f;
+            --modal-overlay: rgba(0, 0, 0, 0.6);
+            --modal-border: rgba(0, 0, 0, 0.1);
 
             /*Footer*/
             --footer-bg: linear-gradient(180deg, #f5eee8, #ffffff);
@@ -36,6 +41,34 @@
 
             /*Anti highlight for pc users / laptop */
             user-select: none;
+        }
+        
+        body.dark {
+            /*Whole body*/
+            --bg: #121212;
+            --card: #1e1e1e;
+            --accent: #5f5525;
+            --text: #eaeaea;
+            --muted: #b5b5b5;
+
+            /*Highlight*/
+            --highlight: #ffffff;
+            --highlight-bg: rgba(255, 255, 255, 0.15);
+
+            /* Modal */
+            --modal-bg: #1e1e1e;
+            --modal-text: #eaeaea;
+            --modal-overlay: rgba(0, 0, 0, 0.75);
+            --modal-border: rgba(255, 255, 255, 0.15);
+
+            /*Footer*/
+            --footer-bg: linear-gradient(180deg, #1a1a1a, #121212);
+            --footer-text: #eaeaea;
+            --footer-border: rgba(255, 255, 255, 0.15);
+
+        }
+        p {
+            color: var(--muted);
         }
 
         
@@ -71,7 +104,7 @@
         .modal {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.6);
+            background: var(--modal-overlay);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -87,15 +120,17 @@
         }
 
         .modal-content {
-            background: #ffffff;
+            background: var(--modal-bg);
+            color: var(--modal-text);
             width: 90%;
             max-width: 420px;
             padding: 35px;
             border-radius: 14px;
             text-align: left;
             transform: scale(0.9);
-            transition: transform 0.4s ease;
+            transition: transform 0.4s ease, background 0.4s ease, color 0.4s ease;
             position: relative;
+            border: 1px solid var(--modal-border);
         }
 
         .modal.show .modal-content {
@@ -105,11 +140,13 @@
         .modal h2 {
             margin-top: 0;
             font-weight: 400;
+            color: var(--modal-text);
         }
 
         .modal p {
             line-height: 1.7;
             font-size: 15px;
+            color: var(--modal-text);
         }
 
         .close {
@@ -118,6 +155,7 @@
             right: 18px;
             font-size: 22px;
             cursor: pointer;
+            color: var(--modal-text);
         }
 
         
@@ -214,30 +252,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        /*Black and white theme*/
-        body.dark {
-            /*Whole body*/
-            --bg: #121212;
-            --card: #1e1e1e;
-            --accent: #5f5525;
-            --text: #eaeaea;
-            --muted: #b5b5b5;
-
-            /*Highlight*/
-            --highlight: #ffffff;
-            --highlight-bg: rgba(255, 255, 255, 0.15);
-
-
-            /*Footer*/
-            --footer-bg: linear-gradient(180deg, #1a1a1a, #121212);
-            --footer-text: #eaeaea;
-            --footer-border: rgba(255, 255, 255, 0.15);
-
-        }
-        p {
-            color: var(--muted);
-        }
-
+        
 
         /*Transition Black and white*/
         body,
