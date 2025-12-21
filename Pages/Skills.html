@@ -20,6 +20,11 @@
             --highlight: #2f2f2f;
             --highlight-bg: rgba(243, 230, 164, 0.3);
 
+            /* Modal */
+            --modal-bg: #ffffff;
+            --modal-text: #2f2f2f;
+            --modal-overlay: rgba(0, 0, 0, 0.6);
+            --modal-border: rgba(0, 0, 0, 0.1);
 
             /*Footer*/
             --footer-bg: linear-gradient(180deg, #f5eee8, #ffffff);
@@ -83,6 +88,11 @@
             --highlight: #ffffff;
             --highlight-bg: rgba(255, 255, 255, 0.15);
 
+            /* Modal */
+            --modal-bg: #1e1e1e;
+            --modal-text: #eaeaea;
+            --modal-overlay: rgba(0, 0, 0, 0.75);
+            --modal-border: rgba(255, 255, 255, 0.15);
 
             /*Footer*/
             --footer-bg: linear-gradient(180deg, #1a1a1a, #121212);
@@ -129,10 +139,12 @@
             background: translateY(-4px);
         }
 
+
+        /*Modal*/
         .modal {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.6);
+            background: var(--modal-overlay);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -148,15 +160,17 @@
         }
 
         .modal-content {
-            background: #ffffff;
+            background: var(--modal-bg);
+            color: var(--modal-text);
             width: 90%;
             max-width: 420px;
             padding: 35px;
             border-radius: 14px;
             text-align: left;
             transform: scale(0.9);
-            transition: transform 0.4s ease;
+            transition: transform 0.4s ease, background 0.4s ease, color 0.4s ease;
             position: relative;
+            border: 1px solid var(--modal-border);
         }
 
         .modal.show .modal-content {
@@ -166,11 +180,13 @@
         .modal h2 {
             margin-top: 0;
             font-weight: 400;
+            color: var(--modal-text);
         }
 
         .modal p {
             line-height: 1.7;
             font-size: 15px;
+            color: var(--modal-text);
         }
 
         .close {
@@ -179,6 +195,7 @@
             right: 18px;
             font-size: 22px;
             cursor: pointer;
+            color: var(--modal-text);
         }
 
         .tech-icons {
@@ -309,6 +326,70 @@
             }
         }
 
+        /* Soft Skills & Hobbies */
+        .soft-hobbies {
+            max-width: 1200px;
+            margin: 120px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .soft-hobbies h2 {
+            font-size: 45px;
+            margin-bottom: 60px;
+            font-weight: 600;
+        }
+
+        .soft-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+        }
+
+        .soft-card {
+            background: var(--card);
+            border-radius: 18px;
+            padding: 35px 25px;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .soft-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--highlight-bg);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .soft-card:hover::before {
+            opacity: 1;
+        }
+
+        .soft-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        .soft-card span {
+            font-size: 38px;
+            display: block;
+            margin-bottom: 18px;
+        }
+
+        .soft-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .soft-card p {
+            font-size: 15px;
+            line-height: 1.7;
+        }
 
         /*Footer*/
         .site-footer {
@@ -469,6 +550,82 @@
 
         </section>
     </main>
+
+    <!-- Soft Skills Section -->
+    <section class="soft-hobbies fade-up">
+        <h2>Soft Skills</h2>
+
+        <div class="soft-grid">
+            <div class="soft-card">
+                <span>💼</span>
+                <h3>Professionalism</h3>
+                <p>Maintains a positive attitude and strong work ethic in all environments.</p>
+            </div>
+
+            <div class="soft-card">
+                <span>🗣️</span>
+                <h3>Communication</h3>
+                <p>Clear and respectful communication with team members and clients.</p>
+            </div>
+
+            <div class="soft-card">
+                <span>🤝</span>
+                <h3>Team Collaboration</h3>
+                <p>Works effectively in teams to achieve shared goals.</p>
+            </div>
+
+            <div class="soft-card">
+                <span>⏱️</span>
+                <h3>Time Management</h3>
+                <p>Organizes tasks efficiently to meet deadlines consistently.</p>
+            </div>
+
+            <div class="soft-card">
+                <span>🧠</span>
+                <h3>Problem Solving</h3>
+                <p>Approaches challenges with a logical and creative mindset.</p>
+            </div>
+
+            <div class="soft-card">
+                <span>⚡</span>
+                <h3>Adaptability</h3>
+                <p>Quick to adjust in fast-paced and evolving environments.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Hobbies & Interests Section -->
+    <section class="soft-hobbies fade-up">
+        <h2>Hobbies & Interests</h2>
+
+        <div class="soft-grid">
+            <div class="soft-card">
+                <span>🎨</span>
+                <h3>Creative Design</h3>
+                <p>Exploring simple layouts and visual design concepts.</p>
+            </div>
+
+            <div class="soft-card">
+                <span>🎧</span>
+                <h3>Listening to Music</h3>
+                <p>Relaxing and resetting through music after work or study.</p>
+            </div>
+
+            <div class="soft-card">
+                <span>👨‍👩‍👧‍👦</span>
+                <h3>Quality Time</h3>
+                <p>Spending meaningful moments with friends and family.</p>
+            </div>
+
+            <div class="soft-card">
+                <span>⚖️</span>
+                <h3>Work-Life Balance</h3>
+                <p>Maintaining balance between productivity and rest.</p>
+            </div>
+        </div>
+    </section>
+
 
     <!--Back to top button-->
     <button id="backToTop" aria-label="Back to top">↑</button>
