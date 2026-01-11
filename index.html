@@ -388,23 +388,22 @@
     <header>
         <h1>Girlie Grace</h1>
         <nav>
-            <a href="Portfolio.html" class="active">Home</a>
+            <a href="index.html" class="active">Home</a>
             <a href="Pages/Skills.html">Skills</a>
-            <a href="Pages/Projects.html">Projects</a>
+            <a href="Pages/Projects.html">Lesson Gallery</a>
+            <a href="Pages/ContactMepage.html">Contacts</a>
             <a href="#" data-modal="aboutModal">About</a>
-            <a href="#" data-modal="contactModal">Contact</a>
 
-            <!--Back and white theme-->
             <button id="themeToggle" aria-label="Toggle dark mode" style="margin-left: 10px;">🌙</button>
         </nav>
-        
     </header>
 
-    <div class="container">
+    <section class="container">
+
         <section class="hero">
             <img src="Images/Profile1.png" alt="Profile" class="fade-up">
 
-            <div>
+            <section>
                 <h2>
                     Hi, i'm <span class="highlight">Girlie Grace</span><br>
                     and this is my portfolio.
@@ -414,11 +413,11 @@
                     in building clean, functional, and user-friendly digital experiences. I enjoy
                     transforming ideas into well-structured websites using modern technologies.
                 </p>
-            </div>
+            </section>
         </section>
-    
+
         <section class="story">
-            <div>
+            <section>
                 <h3><span class="highlight">how i started</span></h3>
                 <p>
                     “Design with intention. Build with purpose. Learn without limits.”
@@ -427,88 +426,74 @@
                     curiosity, and continuous learning. Every project I create is an
                     opportunity to grow and refine my skills.
                 </p>
-            </div>
+            </section>
 
             <img src="Images/Profile2.png" alt="Story Image" class="fade-up">
         </section>
 
-
-
-        <!--Panels Facts Simple-->
         <section class="facts">
             <h3>some <span class="highlight">fun facts</span>.</h3>
 
-            <div class="facts-grid fade-up">
-                <div class="fact">I enjoy refining layouts until every detail feels right</div>
-                <div class="fact">I love solving design and logic problems</div>
-                <div class="fact">I prefer clean, minimal, and organized interfaces</div>
-                <div class="fact">I constantly learn through experimentation</div>
-            </div>
+            <section class="facts-grid fade-up">
+                <section class="fact">I enjoy refining layouts until every detail feels right</section>
+                <section class="fact">I love solving design and logic problems</section>
+                <section class="fact">I prefer clean, minimal, and organized interfaces</section>
+                <section class="fact">I constantly learn through experimentation</section>
+            </section>
         </section>
-    </div>
 
-    <!--Back to top Button-->
+    </section>
+
     <button id="backToTop" aria-label="Back to top">↑</button> 
-    
-    <!--Footer Start-->
-    <footer class="site-footer">
-        <div class="footer-container">
 
-            <div class="footer-brand">
+    <footer class="site-footer">
+
+        <section class="footer-container">
+
+            <section class="footer-brand">
                 <h3>Girlie Grace</h3>
                 <p>
                     Aspiring Frontend Developer passionate about creating
                     clean, responsive, and modern websites.
                 </p>
-            </div>
+            </section>
 
-            <div class="footer-links">
+            <section class="footer-links">
                 <h4>Quick Links</h4>
                 <a href="index.html">Home</a>
                 <a href="#" data-modal="aboutModal">About</a>
                 <a href="Pages/Skills.html">Skills</a>
                 <a href="Pages/Projects.html">Projects</a>
-            </div>
+            </section>
 
-            <div class="footer-connect">
+            <section class="footer-connect">
                 <h4>Connect</h4>
-                <div class="social-icons">
+                <section class="social-icons">
                     <a href="https://www.facebook.com/grace.gerlay" target="_blank">Facebook</a>
-                </div>
-            </div>
+                </section>
+            </section>
 
-        </div>
-        <!--Footer Watermark-->
-        <div class="footer-bottom">
+        </section>
+
+        <section class="footer-bottom">
             © 2025 Girlie Grace. All rights reserved.
-        </div>
-    </footer>
+        </section>
 </body>
 
-    <!--about modal-->
-    <div class="modal" id="aboutModal">
-        <div class="modal-content">
+    <!-- ABOUT MODAL -->
+    <section class="modal" id="aboutModal">
+        <section class="modal-content">
             <span class="close">&times;</span>
             <h2>About Me</h2>
             <p>
                 Hello, am I Girlie Grace, an aspiring web developer passionate about creating <br>
-                beautiful and functional websites. I am dedicated to continuous learning and    <br>
-                growth in the field of web development. <br><br>
+                beautiful and functional websites. I am dedicated to continuous learning and <br>
+                growth in the field of web development.
+                <br><br>
                 BSIT 3-1 (irregular student)
             </p>
-        </div>
-    </div>
-
-    <!--contact modal-->
-    <div class="modal" id="contactModal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Contact</h2>
-            <p>Email: <strong>GirlieIDK@gmail.com</strong></p>
-            <p>Number: <strong>0912345678910</strong></p>
-            <p>Feel free to reach out for collaboration or inquiries.</p>
-        </div>
-    </div>
+        </section>
+    </section>
 
     <!--Fade Up Animation Script-->
     <script>
