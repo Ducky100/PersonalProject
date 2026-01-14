@@ -140,64 +140,6 @@
         }
 
 
-        /*Modal*/
-        .modal {
-            position: fixed;
-            inset: 0;
-            background: var(--modal-overlay);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s ease;
-            z-index: 999;
-        }
-
-        .modal.show {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-content {
-            background: var(--modal-bg);
-            color: var(--modal-text);
-            width: 90%;
-            max-width: 420px;
-            padding: 35px;
-            border-radius: 14px;
-            text-align: left;
-            transform: scale(0.9);
-            transition: transform 0.4s ease, background 0.4s ease, color 0.4s ease;
-            position: relative;
-            border: 1px solid var(--modal-border);
-        }
-
-        .modal.show .modal-content {
-            transform: scale(1);
-        }
-
-        .modal h2 {
-            margin-top: 0;
-            font-weight: 400;
-            color: var(--modal-text);
-        }
-
-        .modal p {
-            line-height: 1.7;
-            font-size: 15px;
-            color: var(--modal-text);
-        }
-
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 18px;
-            font-size: 22px;
-            cursor: pointer;
-            color: var(--modal-text);
-        }
-
         .tech-icons {
             display: flex;
             justify-content: center;
@@ -248,7 +190,7 @@
 
         
         .skill-item {
-            width: 260px;
+            width: 350px;
             text-align: center;
         }
 
@@ -260,7 +202,7 @@
 
         .skill-pill {
             position: relative;
-            height: 70px;
+            height: 100px;
             border: 2px solid #000;
             border-radius: 50px;
             overflow: hidden;
@@ -479,7 +421,6 @@
             <a href="Skills.html" class="active">Skills</a>
             <a href="Projects.html">Lesson Gallery</a>
             <a href="ContactMepage.html">Contacts</a>
-            <a href="#" data-modal="aboutModal">About</a>
 
             <button id="themeToggle" aria-label="Toggle dark mode" style="margin-left: 10px;">🌙</button>
         </nav>
@@ -488,31 +429,7 @@
 
     <main style="max-width: 1200px; margin: auto; padding: 20px;">
 
-        <!-- TOP SKILLS -->
-        <section class="fade-up" style="margin-bottom: 60px;">
-            <h2 style="text-align: center; font-size: 50px;">My Skills</h2>
 
-            <p style="text-align: center; font-weight: bold;">
-                I specialize in front-end web development, creating responsive and visually engaging websites
-                using HTML5, CSS3, JavaScript, Java, and Github. With vite for fast builds and Git for version
-                control, I deliver websites focused on performance, accessibility, and great user experiences.
-            </p>
-
-            <section class="tech-icons">
-                <img src="../Images/Icons.png" alt="Tech Stack Icons">
-            </section>
-        </section>
-
-
-        <!-- WHAT CAN I DO -->
-        <section class="fade-up" style="max-width: 1200px; margin: auto; padding: 20px;">
-            <h2 style="text-align: center; font-size: 50px;">What Can I Do</h2>
-
-            <p style="text-align: center; font-weight: bold;">
-                I build modern, responsive, and user-focused web interfaces using HTML, CSS, and JavaScript,
-                with experience in version control through Git and GitHub.
-            </p>
-        </section>
 
 
         <!-- TECHNICAL SKILL RATING -->
@@ -691,7 +608,7 @@
         </section>
 
         <section class="footer-bottom">
-            © 2025 Girlie Grace. All rights reserved.
+            © 2026 GIRLIE GRACE L. ONTOLAN Portfolio
         </section>
     </footer>
 </body>
@@ -719,58 +636,6 @@
     </script>
 
 
-    <!-- ABOUT MODAL -->
-    <section class="modal" id="aboutModal">
-        <section class="modal-content">
-            <span class="close">&times;</span>
-            <h2>About Me</h2>
-            <p>
-                Hello, am I Girlie Grace, an aspiring web developer passionate about creating <br>
-                beautiful and functional websites. I am dedicated to continuous learning and <br>
-                growth in the field of web development.
-                <br><br>
-                BSIT 3-1 (irregular student)
-            </p>
-        </section>
-    </section>
-
-    <!-- CONTACT MODAL -->
-    <section class="modal" id="contactModal">
-        <section class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Contact</h2>
-            <p>Email: <strong>GirlieIDK@gmail.com</strong></p>
-            <p>Number: <strong>0912345678910</strong></p>
-            <p>Feel free to reach out for collaboration or inquiries.</p>
-        </section>
-    </section>
-
-
-
-    <!--Modal Contact & About-->
-    <script>
-        document.querySelectorAll("[data-modal]").forEach(link => {
-            link.addEventListener("click", e => {
-                e.preventDefault();
-                const modalId = link.getAttribute("data-modal");
-                document.getElementById(modalId).classList.add("show");
-            });
-        });
-
-        document.querySelectorAll(".close").forEach(btn => {
-            btn.addEventListener("click", () => {
-                btn.closest(".modal").classList.remove("show");
-            });
-        });
-
-        document.querySelectorAll(".modal").forEach(modal => {
-            modal.addEventListener("click", e => {
-                if (e.target === modal) {
-                    modal.classList.remove("show");
-                }
-            });
-        });
-    </script>
 
     <!--Skill Animation Pill Script-->
     <script>
