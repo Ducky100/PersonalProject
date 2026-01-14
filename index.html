@@ -101,64 +101,6 @@
             text-decoration: underline;
         }
 
-        .modal {
-            position: fixed;
-            inset: 0;
-            background: var(--modal-overlay);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s ease;
-            z-index: 999;
-        }
-
-        .modal.show {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-content {
-            background: var(--modal-bg);
-            color: var(--modal-text);
-            width: 90%;
-            max-width: 420px;
-            padding: 35px;
-            border-radius: 14px;
-            text-align: left;
-            transform: scale(0.9);
-            transition: transform 0.4s ease, background 0.4s ease, color 0.4s ease;
-            position: relative;
-            border: 1px solid var(--modal-border);
-        }
-
-        .modal.show .modal-content {
-            transform: scale(1);
-        }
-
-        .modal h2 {
-            margin-top: 0;
-            font-weight: 400;
-            color: var(--modal-text);
-        }
-
-        .modal p {
-            line-height: 1.7;
-            font-size: 15px;
-            color: var(--modal-text);
-        }
-
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 18px;
-            font-size: 22px;
-            cursor: pointer;
-            color: var(--modal-text);
-        }
-
-        
         .container {
             max-width: 1200px;
             margin: auto;
@@ -392,7 +334,6 @@
             <a href="Pages/Skills.html">Skills</a>
             <a href="Pages/Projects.html">Lesson Gallery</a>
             <a href="Pages/ContactMepage.html">Contacts</a>
-            <a href="#" data-modal="aboutModal">About</a>
 
             <button id="themeToggle" aria-label="Toggle dark mode" style="margin-left: 10px;">🌙</button>
         </nav>
@@ -405,13 +346,12 @@
 
             <section>
                 <h2>
-                    Hi, i'm <span class="highlight">Girlie Grace</span><br>
+                    Hi, i'm <span class="highlight">Girlie</span><br>
                     and this is my portfolio.
                 </h2>
                 <p>
-                    I am a driven and detail-oriented aspiring web developer with a strong interest
-                    in building clean, functional, and user-friendly digital experiences. I enjoy
-                    transforming ideas into well-structured websites using modern technologies.
+                    I'm someone who enjoys exploring ideas, connecting with people, and making every moment meaningful. 
+                    I believe in continuous learning and spreading positivity wherever I go.
                 </p>
             </section>
         </section>
@@ -420,7 +360,7 @@
             <section>
                 <h3><span class="highlight">how i started</span></h3>
                 <p>
-                    “Design with intention. Build with purpose. Learn without limits.”
+                    “Every challenge is a chance to improve.”
                     <br><br>
                     I believe meaningful digital experiences are built through patience,
                     curiosity, and continuous learning. Every project I create is an
@@ -435,10 +375,12 @@
             <h3>some <span class="highlight">fun facts</span>.</h3>
 
             <section class="facts-grid fade-up">
-                <section class="fact">I enjoy refining layouts until every detail feels right</section>
-                <section class="fact">I love solving design and logic problems</section>
-                <section class="fact">I prefer clean, minimal, and organized interfaces</section>
-                <section class="fact">I constantly learn through experimentation</section>
+                <section class="fact">I enjoy quiet moments just as much as being around people I'm comfortable with.</section>
+                <section class="fact">I notice small details that others often overlook.</section>
+                <section class="fact">I like things that are clean, organized, and aesthetically pleasing.</section>
+                <section class="fact">I get easily curious and love learning new things when something catches my interest.</section>
+                <section class="fact">I appreciate simple joys such as good food, nice views, and peaceful time.</section>
+                <section class="fact">I'm more of a listener than a talker, but I open up once I feel comfortable.</section>
             </section>
         </section>
 
@@ -476,24 +418,9 @@
         </section>
 
         <section class="footer-bottom">
-            © 2025 Girlie Grace. All rights reserved.
+            © 2026 GIRLIE GRACE L. ONTOLAN Portfolio
         </section>
 </body>
-
-    <!-- ABOUT MODAL -->
-    <section class="modal" id="aboutModal">
-        <section class="modal-content">
-            <span class="close">&times;</span>
-            <h2>About Me</h2>
-            <p>
-                Hello, am I Girlie Grace, an aspiring web developer passionate about creating <br>
-                beautiful and functional websites. I am dedicated to continuous learning and <br>
-                growth in the field of web development.
-                <br><br>
-                BSIT 3-1 (irregular student)
-            </p>
-        </section>
-    </section>
 
     <!--Fade Up Animation Script-->
     <script>
@@ -512,30 +439,6 @@
         });
     </script>
 
-    <!--Modal Contact & About-->
-    <script>
-        document.querySelectorAll("[data-modal]").forEach(link => {
-            link.addEventListener("click", e => {
-                e.preventDefault();
-                const modalId = link.getAttribute("data-modal");
-                document.getElementById(modalId).classList.add("show");
-            });
-        });
-
-        document.querySelectorAll(".close").forEach(btn => {
-            btn.addEventListener("click", () => {
-                btn.closest(".modal").classList.remove("show");
-            });
-        });
-
-        document.querySelectorAll(".modal").forEach(modal => {
-            modal.addEventListener("click", e => {
-                if (e.target === modal) {
-                    modal.classList.remove("show");
-                }
-            });
-        });
-    </script>
 
     <!--Black and white theme-->
     <script>
